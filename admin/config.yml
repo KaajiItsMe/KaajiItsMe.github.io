@@ -1,0 +1,67 @@
+backend:
+  name: git-gateway
+  branch: main # GANTI ini jika branch default Anda bukan main (misal: master)
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  # Konfigurasi untuk Profile
+  - name: "profile"
+    label: "Profile Settings"
+    file: "_data/profile.yml"
+    fields:
+      - {label: "Nama Lengkap", name: "nama", widget: "string"}
+      - {label: "Nama Panggilan", name: "panggilan", widget: "string"}
+      - {label: "Peran/Pekerjaan", name: "peran", widget: "string"}
+      - {label: "Value Proposition", name: "value_proposition", widget: "text"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "LinkedIn URL", name: "linkedin", widget: "string"}
+      - {label: "GitHub URL", name: "github", widget: "string"}
+      - {label: "Bio (About)", name: "about_bio", widget: "text"}
+      - {label: "Filosofi", name: "filosofi", widget: "text"}
+      - {label: "Hobi", name: "hobi", widget: "string"}
+
+  # Konfigurasi untuk Skills
+  - name: "skills"
+    label: "Skills & Tools"
+    file: "_data/skills.yml"
+    fields:
+      - label: "Kategori Skill"
+        name: "skills_list"
+        widget: "list"
+        fields:
+          - {label: "Nama Kategori", name: "kategori", widget: "string"}
+          - {label: "Items", name: "items", widget: "list"}
+
+  # Konfigurasi untuk Testimonials
+  - name: "testimonials"
+    label: "Testimonials"
+    file: "_data/testimonials.yml"
+    fields:
+      - label: "Daftar Testimoni"
+        name: "testimoni_list"
+        widget: "list"
+        fields:
+          - {label: "Nama", name: "nama", widget: "string"}
+          - {label: "Jabatan", name: "jabatan", widget: "string"}
+          - {label: "Foto", name: "foto", widget: "image", required: false}
+          - {label: "Isi Testimoni", name: "isi", widget: "text"}
+
+  # Konfigurasi untuk Projects
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Judul Proyek", name: "judul", widget: "string"}
+      - {label: "Jenis Proyek", name: "jenis", widget: "string"}
+      - {label: "Thumbnail", name: "thumbnail", widget: "image"}
+      - {label: "Tech Stack", name: "tech_stack", widget: "list"}
+      - {label: "Live URL", name: "live_url", widget: "string", required: false}
+      - {label: "Repository URL", name: "repo_url", widget: "string", required: false}
+      - {label: "Deskripsi Singkat", name: "deskripsi", widget: "text"}
+      - {label: "Peran Anda", name: "peran", widget: "string"}
+      - {label: "Fitur Unggulan", name: "fitur_unggulan", widget: "text"}
+      - {label: "Body (tidak dipakai, tapi wajib ada untuk MD)", name: "body", widget: "markdown", required: false}

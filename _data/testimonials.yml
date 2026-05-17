@@ -1,0 +1,11 @@
+# GANTI: Ganti dengan testimoni asli atau hapus/kosongkan file ini jika tidak ada data
+
+- nama: "Nama Klien"
+  jabatan: "CEO, Perusahaan X"
+  foto: "/assets/images/testimoni-1.png" # GANTI: Path foto "/assets/images/testimoni-1.jpg"
+  isi: "Bekerja sama dengan developer ini sungguh menyenangkan. Website kami jadi jauh lebih modern dan performanya meningkat drastis."
+
+- nama: "Nama Kolega"
+  jabatan: "Senior Developer, Startup Y"
+  foto: "/assets/images/testimoni-2.png" # GANTI: Path foto "/assets/images/testimoni-2.jpg"
+  isi: "Salah satu developer muda paling teliti yang pernah saya temui. Kode yang dihasilkan selalu rapi dan sesuai standar industri."

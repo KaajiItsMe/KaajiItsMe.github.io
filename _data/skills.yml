@@ -1,0 +1,11 @@
+- kategori: "Frontend"
+  items: ["HTML5", "CSS3/Tailwind", "JavaScript", "React.js"]
+
+- kategori: "UI/UX Design"
+  items: ["Figma", "Wireframing", "Prototyping", "Responsive Design", "User Research"]
+
+- kategori: "Backend"
+  items: ["Node.js", "PHP", "MySQL"]
+
+- kategori: "Tools"
+  items: ["Git & GitHub", "VS Code", "GCloud / Firebase", "Anti Gravity"]

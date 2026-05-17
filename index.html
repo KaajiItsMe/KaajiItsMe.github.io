@@ -1,0 +1,133 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section id="hero" class="hero section">
+    <div class="container hero-container">
+        <div class="hero-content fade-up">
+            <p class="hero-greeting">Halo, saya</p>
+            <h1 class="hero-name">{{ site.data.profile.nama }}</h1>
+            <h2 class="hero-role">{{ site.data.profile.peran }}</h2>
+            <p class="hero-desc">{{ site.data.profile.value_proposition }}</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">Lihat Karya Saya</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper fade-up delay-1">
+            <img src="{{ site.baseurl }}/assets/images/profil.png" alt="Foto {{ site.data.profile.nama }}" class="hero-image">
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects section bg-alt">
+    <div class="container">
+        <div class="section-header fade-up">
+            <h2 class="section-title">Karya Pilihan</h2>
+            <p class="section-subtitle">Beberapa proyek terbaru yang telah saya kerjakan.</p>
+        </div>
+        
+        <div class="projects-grid">
+            {% for project in site.projects %}
+            <article class="project-card fade-up">
+                <div class="project-img-wrapper">
+                    <img src="{{ project.thumbnail }}" alt="Thumbnail {{ project.judul }}" loading="lazy" class="project-img">
+                </div>
+                <div class="project-content">
+                    <span class="project-type">{{ project.jenis }}</span>
+                    <h3 class="project-title">{{ project.judul }}</h3>
+                    <p class="project-desc">{{ project.deskripsi }}</p>
+                    
+                    <div class="project-tags">
+                        {% for stack in project.tech_stack %}
+                        <span class="tag">{{ stack }}</span>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="link-btn">Live Preview</a>
+                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer" class="link-btn outline">Source Code</a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about section">
+    <div class="container">
+        <div class="section-header fade-up">
+            <h2 class="section-title">Tentang Saya</h2>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-image-wrapper fade-up">
+                <img src="{{ site.baseurl }}/assets/images/about.png" alt="Tentang {{ site.data.profile.nama }}" loading="lazy" class="about-image">
+            </div>
+            
+            <div class="about-content fade-up delay-1">
+                <p class="about-bio">{{ site.data.profile.about_bio }}</p>
+                
+                <div class="about-details">
+                    <p><strong>Filosofi:</strong> {{ site.data.profile.filosofi }}</p>
+                    <p><strong>Hobi:</strong> {{ site.data.profile.hobi }}</p>
+                </div>
+                
+                <h3 class="skills-title">Keahlian</h3>
+                <div class="skills-container">
+                    {% for category in site.data.skills %}
+                    <div class="skill-category">
+                        <h4>{{ category.kategori }}</h4>
+                        <div class="skill-tags">
+                            {% for item in category.items %}
+                            <span class="tag tag-alt">{{ item }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+{% if site.data.testimonials.size > 0 %}
+<section id="testimonials" class="testimonials section bg-alt">
+    <div class="container">
+        <div class="section-header fade-up">
+            <h2 class="section-title">Apa Kata Mereka</h2>
+        </div>
+        
+        <div class="testi-grid">
+            {% for testi in site.data.testimonials %}
+            <div class="testi-card fade-up">
+                <p class="testi-text">"{{ testi.isi }}"</p>
+                <div class="testi-author">
+                    <img src="{{ testi.foto }}" alt="Foto {{ testi.nama }}" loading="lazy" class="testi-img">
+                    <div>
+                        <h4 class="testi-name">{{ testi.nama }}</h4>
+                        <p class="testi-role">{{ testi.jabatan }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+    <div class="container text-center">
+        <div class="fade-up">
+            <h2 class="section-title">Mari Berkolaborasi</h2>
+            <p class="contact-desc">Saat ini saya terbuka untuk peluang baru. Baik Anda memiliki pertanyaan atau hanya ingin menyapa, saya akan berusaha membalas secepatnya!</p>
+            <a href="mailto:{{ site.data.profile.email }}" class="btn btn-primary contact-btn">Kirim Pesan</a>
+        </div>
+    </div>
+</section>
