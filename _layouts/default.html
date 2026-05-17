@@ -84,9 +84,7 @@
     <!-- JavaScript -->
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
+
         // Netlify Identity Redirection for CMS
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
