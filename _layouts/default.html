@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Eka Aji Pramudia (Kaaji). All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Eka Aji Pramudia (Kaaji). All rights reserved.</p>
         </div>
     </footer>
 
@@ -84,6 +84,8 @@
     <!-- JavaScript -->
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
 
         // Netlify Identity Redirection for CMS
         if (window.netlifyIdentity) {
