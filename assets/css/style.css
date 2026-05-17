@@ -2,14 +2,14 @@
    CSS Variables & Reset
    ========================================================================== */
    :root {
-    /* Light Theme Colors */
+    /* Light Theme Colors (Putih & Biru) */
     --color-bg: #ffffff;
-    --color-bg-alt: #f8fafc;
-    --color-text: #2d3748;
-    --color-text-muted: #4a5568;
-    --color-primary: #1a365d;
-    --color-primary-hover: #2c5282;
-    --color-border: #e2e8f0;
+    --color-bg-alt: #f4f4f5;
+    --color-text: #000000;
+    --color-text-muted: #52525b;
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-border: #e4e4e7;
     
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -22,14 +22,14 @@
 }
 
 [data-theme="dark"] {
-    /* Dark Theme Colors */
-    --color-bg: #0f172a;
-    --color-bg-alt: #1e293b;
-    --color-text: #f8fafc;
-    --color-text-muted: #cbd5e1;
-    --color-primary: #60a5fa;
-    --color-primary-hover: #93c5fd;
-    --color-border: #334155;
+    /* Dark Theme Colors (Hitam, Biru, Putih) */
+    --color-bg: #000000;
+    --color-bg-alt: #0a0a0a;
+    --color-text: #ffffff;
+    --color-text-muted: #a1a1aa;
+    --color-primary: #3b82f6;
+    --color-primary-hover: #60a5fa;
+    --color-border: #27272a;
     
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
