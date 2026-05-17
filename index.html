@@ -95,23 +95,25 @@ layout: default
     </div>
 </section>
 
-<!-- Testimonials Section -->
-{% if site.data.testimonials.size > 0 %}
-<section id="testimonials" class="testimonials section bg-alt">
+<!-- Team Section -->
+{% if site.data.team.size > 0 %}
+<section id="team" class="testimonials section bg-alt">
     <div class="container">
         <div class="section-header fade-up">
-            <h2 class="section-title">Apa Kata Mereka</h2>
+            <h2 class="section-title">Tim KopChive</h2>
         </div>
         
         <div class="testi-grid">
-            {% for testi in site.data.testimonials %}
+            {% for member in site.data.team %}
             <div class="testi-card fade-up">
-                <p class="testi-text">"{{ testi.isi }}"</p>
+                <p class="testi-text" style="font-style: normal; font-size: 0.95rem;">
+                    <strong>Keahlian:</strong> {{ member.expertise }}
+                </p>
                 <div class="testi-author">
-                    <img src="{{ testi.foto }}" alt="Foto {{ testi.nama }}" loading="lazy" class="testi-img">
+                    <img src="{{ member.foto }}" alt="Foto {{ member.nama }}" loading="lazy" class="testi-img">
                     <div>
-                        <h4 class="testi-name">{{ testi.nama }}</h4>
-                        <p class="testi-role">{{ testi.jabatan }}</p>
+                        <h4 class="testi-name">{{ member.nama }}</h4>
+                        <p class="testi-role">{{ member.role }}</p>
                     </div>
                 </div>
             </div>
