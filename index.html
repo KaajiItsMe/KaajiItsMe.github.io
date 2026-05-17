@@ -16,7 +16,8 @@ layout: default
             </div>
         </div>
         <div class="hero-image-wrapper fade-up delay-1">
-            <img src="{{ site.baseurl }}/assets/images/profil.png" alt="Foto {{ site.data.profile.nama }}" class="hero-image">
+            <img src="{{ site.baseurl }}/assets/images/profil.png" alt="Foto {{ site.data.profile.nama }}"
+                class="hero-image">
         </div>
     </div>
 </section>
@@ -28,27 +29,30 @@ layout: default
             <h2 class="section-title">Karya Pilihan</h2>
             <p class="section-subtitle">Beberapa proyek terbaru yang telah saya kerjakan.</p>
         </div>
-        
+
         <div class="projects-grid">
             {% for project in site.projects %}
             <article class="project-card fade-up">
                 <div class="project-img-wrapper">
-                    <img src="{{ project.thumbnail }}" alt="Thumbnail {{ project.judul }}" loading="lazy" class="project-img">
+                    <img src="{{ project.thumbnail }}" alt="Thumbnail {{ project.judul }}" loading="lazy"
+                        class="project-img">
                 </div>
                 <div class="project-content">
                     <span class="project-type">{{ project.jenis }}</span>
                     <h3 class="project-title">{{ project.judul }}</h3>
                     <p class="project-desc">{{ project.deskripsi }}</p>
-                    
+
                     <div class="project-tags">
                         {% for stack in project.tech_stack %}
                         <span class="tag">{{ stack }}</span>
                         {% endfor %}
                     </div>
-                    
+
                     <div class="project-links">
-                        <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="link-btn">Live Preview</a>
-                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer" class="link-btn outline">Source Code</a>
+                        <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="link-btn">Live
+                            Preview</a>
+                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer"
+                            class="link-btn outline">Source Code</a>
                     </div>
                 </div>
             </article>
@@ -63,20 +67,21 @@ layout: default
         <div class="section-header fade-up">
             <h2 class="section-title">Tentang Saya</h2>
         </div>
-        
+
         <div class="about-grid">
             <div class="about-image-wrapper fade-up">
-                <img src="{{ site.baseurl }}/assets/images/about.png" alt="Tentang {{ site.data.profile.nama }}" loading="lazy" class="about-image">
+                <img src="{{ site.baseurl }}/assets/images/about.png" alt="Tentang {{ site.data.profile.nama }}"
+                    loading="lazy" class="about-image">
             </div>
-            
+
             <div class="about-content fade-up delay-1">
                 <p class="about-bio">{{ site.data.profile.about_bio }}</p>
-                
+
                 <div class="about-details">
                     <p><strong>Filosofi:</strong> {{ site.data.profile.filosofi }}</p>
                     <p><strong>Hobi:</strong> {{ site.data.profile.hobi }}</p>
                 </div>
-                
+
                 <h3 class="skills-title">Keahlian</h3>
                 <div class="skills-container">
                     {% for category in site.data.skills %}
@@ -100,8 +105,12 @@ layout: default
     <div class="container">
         <div class="fade-up">
             <h2 class="section-title" style="margin-bottom: 40px;">Saat Ini Bekerja Dengan</h2>
-            <div style="background-color: #ffffff; padding: 30px; border-radius: 16px; display: inline-block; box-shadow: var(--shadow-md); margin-bottom: 20px;">
-                <img src="{{ site.baseurl }}/assets/images/kopchive-logo.png" alt="Logo KopChive" loading="lazy" style="max-width: 250px; height: auto;">
+            <div
+                style="background-color: #ffffff; padding: 30px; border-radius: 16px; display: inline-block; box-shadow: var(--shadow-md); margin-bottom: 20px;">
+                <br>
+                <img src="{{ site.baseurl }}/assets/images/kopchive-logo.png" alt="Logo KopChive" loading="lazy"
+                    style="max-width: 250px; height: auto;">
+                <br>
             </div>
             <p style="font-size: 1.1rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
                 <strong>KopChive</strong> &mdash; Unit kolektif pengembang kreatif dan inovatif.
@@ -115,7 +124,8 @@ layout: default
     <div class="container text-center">
         <div class="fade-up">
             <h2 class="section-title">Mari Berkolaborasi</h2>
-            <p class="contact-desc">Saat ini saya terbuka untuk peluang baru. Baik Anda memiliki pertanyaan atau hanya ingin menyapa, saya akan berusaha membalas secepatnya!</p>
+            <p class="contact-desc">Saat ini saya terbuka untuk peluang baru. Baik Anda memiliki pertanyaan atau hanya
+                ingin menyapa, saya akan berusaha membalas secepatnya!</p>
             <a href="mailto:{{ site.data.profile.email }}" class="btn btn-primary contact-btn">Kirim Pesan</a>
         </div>
     </div>
