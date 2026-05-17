@@ -34,19 +34,6 @@ collections:
           - {label: "Nama Kategori", name: "kategori", widget: "string"}
           - {label: "Items", name: "items", widget: "list"}
 
-  # Konfigurasi untuk Tim
-  - name: "team"
-    label: "Team Members"
-    file: "_data/team.yml"
-    fields:
-      - label: "Anggota Tim"
-        name: "team_list"
-        widget: "list"
-        fields:
-          - {label: "Nama", name: "nama", widget: "string"}
-          - {label: "Peran / Jabatan", name: "role", widget: "string"}
-          - {label: "Keahlian", name: "expertise", widget: "string"}
-          - {label: "Foto", name: "foto", widget: "image", required: false}
 
   # Konfigurasi untuk Projects
   - name: "projects"

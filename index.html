@@ -95,33 +95,20 @@ layout: default
     </div>
 </section>
 
-<!-- Team Section -->
-{% if site.data.team.size > 0 %}
-<section id="team" class="testimonials section bg-alt">
+<!-- Experience / KopChive Section -->
+<section id="kopchive" class="kopchive section bg-alt text-center">
     <div class="container">
-        <div class="section-header fade-up">
-            <h2 class="section-title">Tim KopChive</h2>
-        </div>
-        
-        <div class="testi-grid">
-            {% for member in site.data.team %}
-            <div class="testi-card fade-up">
-                <p class="testi-text" style="font-style: normal; font-size: 0.95rem;">
-                    <strong>Keahlian:</strong> {{ member.expertise }}
-                </p>
-                <div class="testi-author">
-                    <img src="{{ member.foto }}" alt="Foto {{ member.nama }}" loading="lazy" class="testi-img">
-                    <div>
-                        <h4 class="testi-name">{{ member.nama }}</h4>
-                        <p class="testi-role">{{ member.role }}</p>
-                    </div>
-                </div>
+        <div class="fade-up">
+            <h2 class="section-title" style="margin-bottom: 40px;">Saat Ini Bekerja Dengan</h2>
+            <div style="background-color: #ffffff; padding: 30px; border-radius: 16px; display: inline-block; box-shadow: var(--shadow-md); margin-bottom: 20px;">
+                <img src="{{ site.baseurl }}/assets/images/kopchive-logo.png" alt="Logo KopChive" loading="lazy" style="max-width: 250px; height: auto;">
             </div>
-            {% endfor %}
+            <p style="font-size: 1.1rem; color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+                <strong>KopChive</strong> &mdash; Unit kolektif pengembang kreatif dan inovatif.
+            </p>
         </div>
     </div>
 </section>
-{% endif %}
 
 <!-- Contact Section -->
 <section id="contact" class="contact section">
