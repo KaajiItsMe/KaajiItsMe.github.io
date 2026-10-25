@@ -34,7 +34,7 @@ layout: default
             {% for project in site.projects %}
             <article class="project-card fade-up">
                 <div class="project-img-wrapper">
-                    <img src="{{ project.thumbnail }}" alt="Thumbnail {{ project.judul }}" loading="lazy"
+                    <img src="{{ site.baseurl }}{{ project.thumbnail }}" alt="Thumbnail {{ project.judul }}" loading="lazy"
                         class="project-img">
                 </div>
                 <div class="project-content">
@@ -49,10 +49,14 @@ layout: default
                     </div>
 
                     <div class="project-links">
-                        <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="link-btn">Live
-                            Preview</a>
-                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer"
-                            class="link-btn outline">Source Code</a>
+                        {% if project.live_url and project.live_url != "" %}
+                        <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="link-btn">Live Preview</a>
+                        {% endif %}
+                        {% if project.is_private %}
+                        <span class="link-btn outline" style="opacity: 0.8; cursor: default; display: inline-flex; align-items: center; gap: 4px;" title="Repository disimpan privat karena keamanan/API key">🔒 Private Repo</span>
+                        {% elsif project.repo_url and project.repo_url != "" %}
+                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer" class="link-btn outline">Source Code</a>
+                        {% endif %}
                     </div>
                 </div>
             </article>
