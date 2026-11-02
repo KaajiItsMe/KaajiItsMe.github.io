@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.data.profile.nama }} | {{ site.data.profile.peran }}</title>
+    <title>{{ site.data.profile.nama }} ({{ site.data.profile.panggilan }}) | {{ site.data.profile.peran }}</title>
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="{{ site.data.profile.value_proposition }}">
-    <meta property="og:title" content="{{ site.data.profile.nama }} - Portfolio">
-    <meta property="og:description" content="{{ site.data.profile.value_proposition }}">
-    <meta property="og:image" content="{{ site.baseurl }}/assets/images/profil.jpg"> <!-- GANTI dengan path og:image Anda nanti -->
+    <meta name="author" content="{{ site.data.profile.nama }}">
+    <meta property="og:title" content="{{ site.data.profile.nama }} — {{ site.data.profile.peran }}">
+    <meta property="og:description" content="{{ site.data.profile.headline }}">
+    <meta property="og:image" content="{{ site.baseurl }}/assets/images/profil.jpg">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon.png">
     <!-- CSS -->
@@ -30,21 +32,36 @@
     <!-- Header & Navigation -->
     <header class="header" id="header">
         <div class="container navbar">
-            <a href="#" class="logo">{{ site.data.profile.panggilan }}<span>.</span></a>
+            <a href="#hero" class="logo">
+                <span class="logo-mark">&lt;/&gt;</span>
+                <span class="logo-text">{{ site.data.profile.panggilan }}<span class="dot">.</span></span>
+            </a>
             
             <nav class="nav-links" id="nav-links">
                 <a href="#hero" class="nav-link">Home</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#ecosystem" class="nav-link">Ekosistem</a>
+                <a href="#focus" class="nav-link">Fokus</a>
+                <a href="#skills" class="nav-link">Tech Stack</a>
+                <a href="#projects" class="nav-link">Proyek</a>
+                <a href="#about" class="nav-link">Tentang</a>
+                <a href="#stats" class="nav-link">Statistik</a>
+                <a href="#contact" class="nav-link">Kontak</a>
             </nav>
 
             <div class="nav-actions">
-                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" class="github-badge-nav" title="GitHub Profile">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    <span>@{{ site.data.profile.panggilan }}ItsMe</span>
+                </a>
+
+                <button id="theme-toggle" aria-label="Ganti Tema Dark / Light" class="theme-btn">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </button>
-                <button class="hamburger" id="hamburger" aria-label="Menu">
+
+                <button class="hamburger" id="hamburger" aria-label="Menu Navigasi">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -61,39 +78,68 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <h3>{{ site.data.profile.panggilan }}<span>.</span></h3>
-                <p>{{ site.data.profile.filosofi }}</p>
+                <div class="footer-logo">{{ site.data.profile.panggilan }}<span class="dot">.</span></div>
+                <p class="footer-tagline"><em>"{{ site.data.profile.headline }}"</em></p>
+                <div class="footer-badge-list">
+                    <span class="meta-pill">📍 {{ site.data.profile.lokasi }}</span>
+                    <span class="meta-pill">✨ UI/UX &amp; Web Interface</span>
+                </div>
             </div>
+            
+            <div class="footer-nav">
+                <h4>Navigasi</h4>
+                <div class="footer-links-grid">
+                    <a href="#hero">Beranda</a>
+                    <a href="#ecosystem">Ekosistem Kaami</a>
+                    <a href="#focus">Fokus &amp; Minat</a>
+                    <a href="#skills">Tech Stack</a>
+                    <a href="#projects">Karya &amp; Proyek</a>
+                    <a href="#about">Tentang Kaaji</a>
+                    <a href="#stats">Statistik GitHub</a>
+                </div>
+            </div>
+
             <div class="footer-socials">
-                <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-                <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-                <a href="mailto:{{ site.data.profile.email }}" aria-label="Email">Email</a>
+                <h4>Temukan Saya</h4>
+                <div class="footer-social-badges">
+                    <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" class="social-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                        <span>GitHub @KaajiItsMe</span>
+                    </a>
+                    <a href="{{ site.data.profile.website }}" target="_blank" rel="noopener noreferrer" class="social-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <span>Website kaami.my.id</span>
+                    </a>
+                    <a href="mailto:{{ site.data.profile.email }}" class="social-chip">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span>{{ site.data.profile.email }}</span>
+                    </a>
+                </div>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> Eka Aji Pramudia (Kaaji). All rights reserved.</p>
+            <p>Dibuat dengan ❤️ oleh <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer"><strong>Kaaji</strong></a> &bull; &copy; <span id="year"></span> Eka Aji Pramudia. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Back to top -->
-    <button id="back-to-top" aria-label="Back to Top" class="btt-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    <button id="back-to-top" aria-label="Kembali ke atas" class="btt-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
     </button>
 
     <!-- JavaScript -->
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script>
-        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Netlify Identity Redirection for CMS
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
-            if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-                });
-            }
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
             });
         }
     </script>

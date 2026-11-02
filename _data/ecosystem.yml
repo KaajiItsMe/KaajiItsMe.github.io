@@ -1,0 +1,28 @@
+- name: "Kaami"
+  url: "https://kaami.my.id"
+  badge: "Website Utama"
+  deskripsi: "Website utama dan wadah berbagai karya serta pengembangan produk digital."
+  status: "Active"
+  icon: "globe"
+
+- name: "Undangan Digital"
+  url: "https://undangan.kaami.my.id"
+  badge: "Platform"
+  deskripsi: "Platform undangan digital dalam ekosistem Kaami. Source code bersifat private."
+  status: "Private"
+  icon: "mail"
+
+- name: "Portfolio"
+  url: "https://kaajiitsme.github.io"
+  badge: "Personal Showcase"
+  deskripsi: "Website pribadi untuk menampilkan karya, eksperimen, dan perjalanan pengembangan."
+  status: "Active"
+  icon: "sparkles"
+
+- name: "ProfileKM"
+  url: ""
+  badge: "In Development"
+  deskripsi: "Pengembangan website profil digital yang masih berlangsung, berfokus memudahkan pembangunan halaman profil."
+  status: "Developing"
+  icon: "user-check"
+

@@ -1,65 +1,100 @@
-# Static Portfolio Template
+<div align="center">
 
-Portfolio statis one-page yang clean, modern, dan siap di-deploy ke GitHub Pages.
-Dibuat dengan Jekyll tanpa framework JS atau build-step kompleks. Tersedia CMS admin gratis (Decap CMS + Netlify Identity).
+# 🌐 Portfolio — Eka Aji Pramudia (Kaaji)
 
-## Fitur Utama
-- 🚀 Sangat Cepat (Hanya HTML, CSS Murni, Vanilla JS)
-- 📱 Responsive Design (Mobile First)
-- 🌓 Dark/Light Mode
-- ✨ Animasi Scroll Halus
-- 🗄️ Terstruktur menggunakan Data (YAML)
-- 📝 Siap digunakan dengan Admin Panel (Decap CMS)
+**UI/UX & Interface Design &bull; Interface Development &bull; Design Thinking**
 
-## Struktur Folder
-- `_config.yml`: Konfigurasi utama Jekyll
-- `_data/`: Berisi file YAML untuk data Profile, Skills, Testimonials
-- `_projects/`: Koleksi markdown berisi proyek-proyek yang pernah Anda buat
-- `_layouts/default.html`: Struktur HTML dasar (Header, Footer, Main layout)
-- `assets/css/style.css`: File CSS styling
-- `assets/js/main.js`: Logika interaksi (Dark mode, Hamburger menu, Scroll animation)
-- `admin/`: Berisi konfigurasi untuk Decap CMS
+[![Website](https://img.shields.io/badge/Website-kaami.my.id-334155?style=for-the-badge&logo=googlechrome&logoColor=white)](https://kaami.my.id)
+[![Portfolio Live](https://img.shields.io/badge/Portfolio-kaajiitsme.github.io-38bdf8?style=for-the-badge&logo=github&logoColor=0b111c)](https://kaajiitsme.github.io)
+[![GitHub](https://img.shields.io/badge/GitHub-@KaajiItsMe-181717?style=for-the-badge&logo=github)](https://github.com/KaajiItsMe)
 
-## Cara Edit Konten (Manual)
+*Designing interfaces, connecting ideas, and building things that work.*
 
-Untuk mulai mengisi data Anda, cari dan edit bagian yang ditandai dengan `# GANTI:` atau `<!-- GANTI: -->` pada file-file berikut:
-1. `_data/profile.yml` (Nama, Role, Bio, Social Links)
-2. `_data/skills.yml` (Keahlian)
-3. `_data/testimonials.yml` (Review klien)
-4. `_projects/*.md` (Portofolio proyek)
-5. `assets/images/` (Ganti dengan aset gambar yang sesuai)
-   - profil.jpg (400x400)
-   - about.jpg (600x800)
+</div>
 
-## Cara Deploy ke GitHub Pages
+---
 
-1. Buat repository baru di GitHub dengan nama: `KaajiItsMe.github.io` (Penting agar menjadi root website).
-2. Upload/push semua file dalam folder ini ke branch `main` di repository tersebut.
-3. Buka tab **Settings** di repository GitHub Anda.
-4. Pergi ke menu **Pages** (di sidebar kiri).
-5. Pada bagian **Build and deployment**, pilih **Source: GitHub Actions** atau biarkan default Jekyll, karena GitHub otomatis mendeteksi. Jika menggunakan branch, pilih branch `main`, root `/`, lalu klik **Save**.
-6. Tunggu beberapa menit, website Anda akan live di `https://kaajiitsme.github.io`.
+## 👨‍💻 Tentang Saya
 
-## Setup Admin Panel (Decap CMS via Netlify Identity)
+Halo, saya **Eka Aji Pramudia**, dikenal sebagai **Kaaji**, dari Makassar, Indonesia.
 
-Anda bisa mengedit konten dari browser (tanpa coding) menggunakan Decap CMS. Berikut langkah setup-nya:
+Saya tertarik pada pengembangan produk digital, terutama **UI/UX Design, perancangan interface, design thinking, dan pengembangan website**.
 
-1. **Hubungkan Repo ke Netlify**:
-   - Buat akun di [Netlify](https://www.netlify.com/).
-   - Klik **Add new site** > **Import an existing project** dari GitHub.
-   - Deploy situs Anda.
-2. **Aktifkan Netlify Identity**:
-   - Di dashboard Netlify, ke **Site settings** > **Identity** > klik **Enable Identity**.
-3. **Konfigurasi Git Gateway**:
-   - Di menu Identity, scroll ke bawah ke bagian **Services** > **Git Gateway**, klik **Enable Git Gateway**. (Akan menghubungkan akun GitHub Anda).
-4. **Izinkan Pendaftaran Admin**:
-   - Di tab **Identity** di menu atas Netlify, klik **Invite users** dan kirim ke email Anda, atau buka website Anda langsung di Netlify dan daftar lewat widget.
-5. **Login**:
-   - Buka URL website yang terdeploy (Netlify atau GitHub Pages), dan tambahkan `/admin` di belakangnya (contoh: `https://.../admin`).
-   - Login menggunakan email yang sudah didaftarkan. Anda sekarang dapat mengubah isi `profile`, `skills`, `projects`, dll langsung dari browser!
+Saya suka memikirkan bagaimana sebuah tampilan seharusnya bekerja, bukan hanya bagaimana tampilannya terlihat. Mulai dari menyusun layout, menentukan alur interaksi, memikirkan pengalaman pengguna, sampai menghubungkan elemen antarmuka dengan logika dan fungsi di baliknya.
 
-## Local Development (Opsional)
-Jika ingin menjalankan secara lokal untuk testing:
-1. Pastikan Ruby dan Bundler terinstall.
-2. Jalankan `bundle exec jekyll serve`.
-3. Buka `http://localhost:4000`.
+Bagi saya, desain dan development bukan dua hal yang terpisah. Keduanya perlu saling terhubung agar menghasilkan produk yang tidak hanya menarik secara visual, tetapi juga nyaman digunakan dan benar-benar berfungsi.
+
+---
+
+## 🌐 Ekosistem Kaami
+
+**[Kaami](https://kaami.my.id)** merupakan ruang untuk mengembangkan dan mengelola berbagai karya serta produk digital.
+
+| Produk | Deskripsi |
+|---|---|
+| [**Kaami**](https://kaami.my.id) | Website utama dan wadah berbagai karya serta pengembangan produk digital. |
+| [**Undangan Digital**](https://undangan.kaami.my.id) | Platform undangan digital dalam ekosistem Kaami. Source code bersifat private. |
+| [**Portfolio**](https://kaajiitsme.github.io) | Website pribadi untuk menampilkan karya, eksperimen, dan perjalanan pengembangan. |
+| **ProfileKM** | Pengembangan website profil digital yang masih berlangsung. |
+
+---
+
+## 🎨 Fokus & Ketertarikan
+
+Hal yang paling saya nikmati dalam mengembangkan produk digital adalah proses menghubungkan desain dengan fungsionalitas.
+
+- **UI/UX & Visual Interface**: Merancang tampilan antarmuka, layout, hierarki visual, alur interaksi pengguna, dan desain responsif.
+- **Design Thinking**: Memikirkan interaksi pengguna, struktur navigasi, solusi masalah melalui desain, dan penyederhanaan alur penggunaan.
+- **Interface Development**: Mengubah rancangan desain menjadi kode antarmuka nyata, menghubungkan interaksi komponen, dan optimasi berbagai perangkat.
+- **System & Functionality**: Menghubungkan frontend dengan backend, mengembangkan logika sistem, integrasi API & database.
+
+---
+
+## ⚙️ Tech Stack
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,vue,nuxt,java,py,git,github,figma&perline=10" alt="Tech stack" />
+
+</div>
+
+---
+
+## 📌 Proyek Publik (Open Source)
+
+| Prioritas | Proyek | Deskripsi |
+|---|---|---|
+| 1 | [**ToDo**](https://github.com/KaajiItsMe/ToDo) | Aplikasi desktop pengelolaan tugas dan pengingat dengan integrasi Firebase. |
+| 2 | [**STENA**](https://github.com/KaajiItsMe/STENA-Undeteced-Share-Screen-Notepad-AI-Windows-) | Eksperimen aplikasi desktop AI dengan fitur screen sharing dan notepad. |
+| 3 | [**CursorHide**](https://github.com/KaajiItsMe/CursorHide) | Utility Windows untuk menyembunyikan dan menampilkan kursor. |
+| 4 | [**Portfolio**](https://github.com/KaajiItsMe/KaajiItsMe.github.io) | Website portfolio pribadi untuk menampilkan karya dan identitas digital. |
+
+---
+
+## 🧩 Selected Projects & Case Studies
+
+- 🌍 **LokaLens AI**: AI-powered local discovery platform untuk rekomendasi tempat menarik dan eksplorasi hidden gems lokal (*Status: Inactive / Private*).
+- 🏢 **Absensi BKN**: Sistem manajemen absensi WFO/WFH dengan validasi GPS geofencing, daily activity logbook, dan analitik keamanan honeypot (*Status: Private Project*).
+- 🤖 **MAI Communication Hub**: Konsep communication hub yang mengintegrasikan multi-platform dan workflow AI (*Status: Private Project*).
+
+---
+
+## 🛠️ Pengembangan Lokal Website Portfolio
+
+Website ini dibangun menggunakan **Jekyll** dan siap di-deploy secara otomatis ke GitHub Pages.
+
+```bash
+# Build website
+jekyll build
+
+# Menjalankan local server
+bundle exec jekyll serve
+```
+
+---
+
+<div align="center">
+
+Dibuat dengan ❤️ oleh [Kaaji](https://github.com/KaajiItsMe)
+
+</div>

@@ -1,15 +1,17 @@
-title: Eka Aji Pramudia - Fullstack Developer & UI/UX Designer
+title: "Kaaji — UI/UX, Interface Design & Development"
 email: backupeka7@gmail.com
 description: >-
-  Portfolio Eka Aji Pramudia (Kaaji), Fullstack Developer spesialis 
-  Frontend & UI/UX Design. Website fungsional, indah, user-friendly.
-baseurl: "" # Ganti dengan nama repo jika deploy di subfolder, misal "/portfolio"
-url: "https://kaajiitsme.github.io" # Ganti dengan URL GitHub Pages Anda, misal "https://username.github.io"
+  Portfolio pribadi Eka Aji Pramudia (Kaaji). Berfokus pada UI/UX Design, 
+  perancangan interface, design thinking, dan pengembangan website. 
+  Menghubungkan estetika visual dengan fungsionalitas sistem.
+baseurl: ""
+url: "https://kaajiitsme.github.io"
 
 # Koleksi untuk custom content
 collections:
   projects:
-    output: false # Tidak perlu halaman detail untuk single-page portfolio
+    output: false
+    sort_by: prioritas
 
 # Exclude file/folder agar tidak di-build oleh Jekyll
 exclude:
@@ -17,3 +19,6 @@ exclude:
   - node_modules
   - Gemfile
   - Gemfile.lock
+  - _site
+  - .jekyll-cache
+  - _projects_archive

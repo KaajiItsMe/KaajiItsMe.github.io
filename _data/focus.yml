@@ -1,0 +1,38 @@
+intro: "Hal yang paling saya nikmati dalam mengembangkan produk digital adalah proses menghubungkan desain dengan fungsionalitas."
+pillars:
+  - id: "ui-ux"
+    title: "UI/UX & Visual Interface"
+    icon: "layout"
+    items:
+      - "Merancang tampilan antarmuka (UI)."
+      - "Menyusun layout dan hierarki visual yang jelas."
+      - "Memikirkan pengalaman serta alur pengguna (UX)."
+      - "Membuat desain responsif di berbagai perangkat."
+
+  - id: "design-thinking"
+    title: "Design Thinking"
+    icon: "brain"
+    items:
+      - "Memikirkan bagaimana pengguna berinteraksi."
+      - "Menentukan struktur dan navigasi sistem."
+      - "Memecahkan masalah melalui pendekatan desain."
+      - "Menyederhanakan pengalaman penggunaan."
+
+  - id: "interface-dev"
+    title: "Interface Development"
+    icon: "code"
+    items:
+      - "Mengubah desain menjadi antarmuka nyata."
+      - "Menghubungkan komponen dan interaksi dinamis."
+      - "Mengembangkan website dan aplikasi modern."
+      - "Menyesuaikan tampilan berbagai perangkat & browser."
+
+  - id: "system-func"
+    title: "System & Functionality"
+    icon: "cpu"
+    items:
+      - "Menghubungkan frontend dengan arsitektur backend."
+      - "Mengembangkan logika dan alur sistem."
+      - "Mengintegrasikan API dan database."
+      - "Memastikan fitur bekerja sesuai kebutuhan & stabil."
+

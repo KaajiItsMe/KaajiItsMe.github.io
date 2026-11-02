@@ -1,15 +1,22 @@
 nama: "Eka Aji Pramudia"
 panggilan: "Kaaji"
-peran: "Fullstack Developer (Front Dev Specialist) & UI/UX Designer"
-value_proposition: "Saya bantu Anda tampil beda dengan website yang tidak hanya fungsional, tapi juga indah dan user-friendly."
+peran: "UI/UX, Interface Design & Development"
+headline: "Designing interfaces, connecting ideas, and building things that work."
+lokasi: "Makassar, Indonesia"
+value_proposition: "Saya tertarik pada pengembangan produk digital, terutama UI/UX Design, perancangan interface, design thinking, dan pengembangan website. Menghubungkan estetika visual dengan logika dan fungsi sistem."
+typing_lines:
+  - "Halo, saya Kaaji"
+  - "UI/UX & Interface Design"
+  - "Memikirkan tampilan dan pengalaman pengguna"
+  - "Menghubungkan desain dengan cara kerja sistem"
+  - "Building ideas into digital experiences"
 email: "backupeka7@gmail.com"
-linkedin: "[ISI NANTI]"
-github: "https://github.com/kaajiitsme"
-about_bio: >-
-  Saya Fullstack Developer dengan spesialisasi di Frontend dan UI/UX Design. 
-  Menggabungkan logika pemrograman dengan estetika visual untuk menciptakan 
-  website yang tidak hanya bekerja dengan baik, tetapi juga nyaman dipandang 
-  dan mudah digunakan. Berpengalaman membangun website dari nol hingga 
-  production-ready dengan fokus pada performa, aksesibilitas, dan konversi.
-filosofi: "Website yang baik itu bukan hanya soal kode, tapi bagaimana pengguna merasakannya."
-hobi: "Eksplorasi desain UI, Editing, dan cari ide website."
+website: "https://kaami.my.id"
+github: "https://github.com/KaajiItsMe"
+portfolio: "https://kaajiitsme.github.io"
+about_bio_p1: "Halo, saya **Eka Aji Pramudia**, dikenal sebagai **Kaaji**, dari Makassar, Indonesia."
+about_bio_p2: "Saya tertarik pada pengembangan produk digital, terutama **UI/UX Design, perancangan interface, design thinking, dan pengembangan website**."
+about_bio_p3: "Saya suka memikirkan bagaimana sebuah tampilan seharusnya bekerja, bukan hanya bagaimana tampilannya terlihat. Mulai dari menyusun layout, menentukan alur interaksi, memikirkan pengalaman pengguna, sampai menghubungkan elemen antarmuka dengan logika dan fungsi di baliknya."
+about_bio_p4: "Bagi saya, desain dan development bukan dua hal yang terpisah. Keduanya perlu saling terhubung agar menghasilkan produk yang tidak hanya menarik secara visual, tetapi juga nyaman digunakan dan benar-benar berfungsi."
+filosofi: "Designing interfaces, connecting ideas, and building things that work."
+hobi: "UI/UX Design, Perancangan Interface, Design Thinking & Web Development"

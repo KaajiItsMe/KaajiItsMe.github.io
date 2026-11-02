@@ -6,37 +6,204 @@ layout: default
 <section id="hero" class="hero section">
     <div class="container hero-container">
         <div class="hero-content fade-up">
+            <div class="hero-status-pill">
+                <span class="status-dot"></span>
+                <span>Tersedia untuk Kolaborasi &bull; {{ site.data.profile.lokasi }}</span>
+            </div>
+
             <p class="hero-greeting">Halo, saya</p>
-            <h1 class="hero-name">{{ site.data.profile.nama }}</h1>
-            <h2 class="hero-role">{{ site.data.profile.peran }}</h2>
+            <h1 class="hero-name">{{ site.data.profile.nama }} <span class="alias">({{ site.data.profile.panggilan }})</span></h1>
+            
+            <div class="hero-typing-wrap">
+                <img src="https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=600&size=20&duration=3200&pause=900&color=38BDF8&center=false&vCenter=true&width=620&lines=UI%2FUX+%26+Interface+Design;Memikirkan+tampilan+dan+pengalaman+pengguna;Menghubungkan+desain+dengan+cara+kerja+sistem;Building+ideas+into+digital+experiences" 
+                     alt="Kaaji Role Animation" 
+                     class="typing-banner" 
+                     loading="eager" />
+            </div>
+
             <p class="hero-desc">{{ site.data.profile.value_proposition }}</p>
+
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">Lihat Karya Saya</a>
-                <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+                <a href="#ecosystem" class="btn btn-primary">Jelajahi Ekosistem</a>
+                <a href="#projects" class="btn btn-outline">Lihat Proyek</a>
+                <a href="#contact" class="btn btn-ghost">Hubungi Saya</a>
+            </div>
+
+            <div class="hero-quick-badges">
+                <a href="{{ site.data.profile.website }}" target="_blank" rel="noopener noreferrer" class="badge-link">
+                    <span class="badge-icon">🌐</span>
+                    <span>kaami.my.id</span>
+                </a>
+                <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" class="badge-link">
+                    <span class="badge-icon">🐙</span>
+                    <span>GitHub @KaajiItsMe</span>
+                </a>
             </div>
         </div>
+
         <div class="hero-image-wrapper fade-up delay-1">
-            <img src="{{ site.baseurl }}/assets/images/profil.jpg" alt="Foto {{ site.data.profile.nama }}"
-                class="hero-image">
+            <div class="image-frame">
+                <img src="{{ site.baseurl }}/assets/images/profil.jpg" alt="Foto {{ site.data.profile.nama }}" class="hero-image">
+            </div>
+            <div class="hero-tag-badge">
+                <span class="tag-icon">✨</span>
+                <span class="tag-text">Designing interfaces &amp; systems</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ekosistem Kaami Section -->
+<section id="ecosystem" class="ecosystem section bg-alt">
+    <div class="container">
+        <div class="section-header text-center fade-up">
+            <div class="section-tag">Ruang Digital</div>
+            <h2 class="section-title">🌐 Ekosistem Kaami</h2>
+            <p class="section-subtitle"><strong><a href="https://kaami.my.id" target="_blank" rel="noopener noreferrer">Kaami</a></strong> merupakan ruang untuk mengembangkan dan mengelola berbagai karya serta produk digital.</p>
+        </div>
+
+        <div class="ecosystem-grid">
+            {% for item in site.data.ecosystem %}
+            <div class="ecosystem-card fade-up">
+                <div class="eco-header">
+                    <div class="eco-icon-wrap">
+                        {% if item.icon == 'globe' %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        {% elsif item.icon == 'mail' %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        {% elsif item.icon == 'sparkles' %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        {% else %}
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        {% endif %}
+                    </div>
+                    <span class="eco-badge eco-badge-{{ item.status | downcase }}">{{ item.badge }}</span>
+                </div>
+                <h3 class="eco-title">{{ item.name }}</h3>
+                <p class="eco-desc">{{ item.deskripsi }}</p>
+                <div class="eco-footer">
+                    {% if item.url != "" %}
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="eco-link">
+                        <span>Kunjungi Produk</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"></path><path d="M7 7h10v10"></path></svg>
+                    </a>
+                    {% else %}
+                    <span class="eco-link eco-disabled">
+                        <span>Sedang Dibangun</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Fokus & Ketertarikan Section -->
+<section id="focus" class="focus section">
+    <div class="container">
+        <div class="section-header text-center fade-up">
+            <div class="section-tag">Kompetensi Inti</div>
+            <h2 class="section-title">🎨 Fokus &amp; Ketertarikan</h2>
+            <p class="section-subtitle">{{ site.data.focus.intro }}</p>
+        </div>
+
+        <div class="focus-grid">
+            {% for pillar in site.data.focus.pillars %}
+            <div class="focus-card fade-up">
+                <div class="focus-card-header">
+                    <div class="focus-icon">
+                        {% if pillar.icon == 'layout' %}
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        {% elsif pillar.icon == 'brain' %}
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"></path><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path></svg>
+                        {% elsif pillar.icon == 'code' %}
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        {% else %}
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                        {% endif %}
+                    </div>
+                    <h3 class="focus-title">{{ pillar.title }}</h3>
+                </div>
+                <ul class="focus-list">
+                    {% for item in pillar.items %}
+                    <li>
+                        <span class="bullet">▹</span>
+                        <span>{{ item }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section id="skills" class="tech-stack-section section bg-alt">
+    <div class="container">
+        <div class="section-header text-center fade-up">
+            <div class="section-tag">Teknologi &amp; Alat</div>
+            <h2 class="section-title">⚙️ Tech Stack</h2>
+            <p class="section-subtitle">Tools dan teknologi yang saya gunakan dalam proses desain, pengembangan, dan eksperimen.</p>
+        </div>
+
+        <div class="skillicons-wrapper fade-up text-center">
+            <div class="skillicons-card">
+                <img src="https://skillicons.dev/icons?i=html,css,js,vue,nuxt,java,py,git,github,figma&perline=10" 
+                     alt="Tech Stack Kaaji" 
+                     class="skillicons-badge-img" 
+                     loading="lazy" />
+            </div>
+        </div>
+
+        <div class="skills-categorized-grid fade-up delay-1">
+            {% for category in site.data.skills %}
+            <div class="skill-category-box">
+                <h4 class="category-title">{{ category.kategori }}</h4>
+                <div class="skill-tags">
+                    {% for item in category.items %}
+                    <span class="tag tag-pill">{{ item }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="projects section bg-alt">
+<section id="projects" class="projects section">
     <div class="container">
-        <div class="section-header fade-up">
-            <h2 class="section-title">Karya Pilihan</h2>
-            <p class="section-subtitle">Beberapa proyek terbaru yang telah saya kerjakan.</p>
+        <div class="section-header text-center fade-up">
+            <div class="section-tag">Katalog Karya</div>
+            <h2 class="section-title">📌 Karya &amp; Proyek</h2>
+            <p class="section-subtitle">Beberapa proyek publik di GitHub serta selected case studies yang pernah saya bangun.</p>
+            
+            <!-- Project Filter Controls -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Semua Proyek</button>
+                <button class="filter-btn" data-filter="open_source">Open Source</button>
+                <button class="filter-btn" data-filter="case_study">Selected &amp; Case Studies</button>
+            </div>
         </div>
 
         <div class="projects-grid">
-            {% for project in site.projects %}
-            <article class="project-card fade-up">
+            {% assign sorted_projects = site.projects | sort: 'prioritas' %}
+            {% for project in sorted_projects %}
+            <article class="project-card fade-up" data-category="{{ project.kategori_proyek }}">
                 <div class="project-img-wrapper">
-                    <img src="{{ site.baseurl }}{{ project.thumbnail }}" alt="Thumbnail {{ project.judul }}"
-                        loading="lazy" class="project-img">
+                    <img src="{{ site.baseurl }}{{ project.thumbnail }}" alt="Thumbnail {{ project.judul }}" loading="lazy" class="project-img">
+                    <div class="project-overlay-badge">
+                        {% if project.kategori_proyek == 'open_source' %}
+                        <span class="badge-type badge-os">Open Source #{{ project.prioritas }}</span>
+                        {% else %}
+                        <span class="badge-type badge-cs">Case Study</span>
+                        {% endif %}
+                    </div>
                 </div>
+
                 <div class="project-content">
                     <span class="project-type">{{ project.jenis }}</span>
                     <h3 class="project-title">{{ project.judul }}</h3>
@@ -50,16 +217,22 @@ layout: default
 
                     <div class="project-links">
                         {% if project.live_url and project.live_url != "" %}
-                        <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="link-btn">Live
-                            Preview</a>
+                        <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                            <span>Live Preview</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
                         {% endif %}
+
                         {% if project.is_private %}
-                        <span class="link-btn outline"
-                            style="opacity: 0.8; cursor: default; display: inline-flex; align-items: center; gap: 4px;"
-                            title="Repository disimpan privat karena keamanan/API key">Private Repo</span>
+                        <span class="link-btn outline-disabled" title="Repository bersifat privat">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <span>{{ project.status_label | default: "Private Source" }}</span>
+                        </span>
                         {% elsif project.repo_url and project.repo_url != "" %}
-                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer"
-                            class="link-btn outline">Source Code</a>
+                        <a href="{{ project.repo_url }}" target="_blank" rel="noopener noreferrer" class="link-btn outline-link">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            <span>Source Code</span>
+                        </a>
                         {% endif %}
                     </div>
                 </div>
@@ -70,52 +243,134 @@ layout: default
 </section>
 
 <!-- About Section -->
-<section id="about" class="about section">
+<section id="about" class="about section bg-alt">
     <div class="container">
         <div class="section-header fade-up">
-            <h2 class="section-title">Tentang Saya</h2>
+            <div class="section-tag">Profil &amp; Filosofi</div>
+            <h2 class="section-title">👨‍💻 Tentang Saya</h2>
         </div>
 
         <div class="about-grid">
             <div class="about-image-wrapper fade-up">
-                <img src="{{ site.baseurl }}/assets/images/about.jpg" alt="Tentang {{ site.data.profile.nama }}"
-                    loading="lazy" class="about-image">
+                <div class="about-frame">
+                    <img src="{{ site.baseurl }}/assets/images/about.jpg" alt="Tentang {{ site.data.profile.nama }}" loading="lazy" class="about-image">
+                </div>
+                <div class="about-floating-card">
+                    <span class="af-icon">💡</span>
+                    <span class="af-text">"Designing interfaces, connecting ideas, and building things that work."</span>
+                </div>
             </div>
 
             <div class="about-content fade-up delay-1">
-                <p class="about-bio">{{ site.data.profile.about_bio }}</p>
-
-                <div class="about-details">
-                    <p><strong>Filosofi:</strong> {{ site.data.profile.filosofi }}</p>
-                    <p><strong>Hobi:</strong> {{ site.data.profile.hobi }}</p>
+                <div class="about-bio-paragraphs">
+                    <div class="about-p leader">{{ site.data.profile.about_bio_p1 | markdownify }}</div>
+                    <div class="about-p">{{ site.data.profile.about_bio_p2 | markdownify }}</div>
+                    <div class="about-p">{{ site.data.profile.about_bio_p3 | markdownify }}</div>
+                    <div class="about-p emphasis-box">{{ site.data.profile.about_bio_p4 | markdownify }}</div>
                 </div>
 
-                <h3 class="skills-title">Keahlian</h3>
-                <div class="skills-container">
-                    {% for category in site.data.skills %}
-                    <div class="skill-category">
-                        <h4>{{ category.kategori }}</h4>
-                        <div class="skill-tags">
-                            {% for item in category.items %}
-                            <span class="tag tag-alt">{{ item }}</span>
-                            {% endfor %}
-                        </div>
+                <div class="about-details-table">
+                    <div class="detail-row">
+                        <span class="detail-label">📍 Lokasi</span>
+                        <span class="detail-value">{{ site.data.profile.lokasi }}</span>
                     </div>
-                    {% endfor %}
+                    <div class="detail-row">
+                        <span class="detail-label">🎯 Minat Utama</span>
+                        <span class="detail-value">{{ site.data.profile.hobi }}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">🌐 Ruang Karya</span>
+                        <span class="detail-value"><a href="https://kaami.my.id" target="_blank" rel="noopener noreferrer">Kaami (kaami.my.id)</a></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- GitHub Stats Section -->
+<section id="stats" class="stats-section section">
+    <div class="container">
+        <div class="section-header text-center fade-up">
+            <div class="section-tag">Aktivitas GitHub</div>
+            <h2 class="section-title">📊 Statistik &amp; Aktivitas</h2>
+            <p class="section-subtitle">Pantauan kontribusi publik, repositori, dan bahasa pemrograman yang paling sering digunakan.</p>
+        </div>
+
+        <div class="stats-cards-grid fade-up">
+            <!-- Extended Stats -->
+            <div class="stat-card">
+                <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">
+                    <img src="https://github-stats-extended.vercel.app/api?username=KaajiItsMe&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&include_all_commits=true" 
+                         alt="GitHub Statistics" 
+                         class="stat-img" 
+                         loading="lazy" />
+                </a>
+            </div>
+
+            <!-- GitHub Streak -->
+            <div class="stat-card">
+                <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">
+                    <img src="https://raw.githubusercontent.com/KaajiItsMe/KaajiItsMe/main/profile/streak.svg" 
+                         alt="GitHub Streak" 
+                         class="stat-img" 
+                         loading="lazy" />
+                </a>
+            </div>
+
+            <!-- Most Used Languages -->
+            <div class="stat-card stat-card-wide">
+                <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">
+                    <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=KaajiItsMe&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&langs_count=8" 
+                         alt="Most Used Languages" 
+                         class="stat-img" 
+                         loading="lazy" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Contact Section -->
-<section id="contact" class="contact section">
+<section id="contact" class="contact section bg-alt">
     <div class="container text-center">
         <div class="fade-up">
-            <h2 class="section-title">Mari Berkolaborasi</h2>
-            <p class="contact-desc">Saat ini saya terbuka untuk peluang baru. Baik Anda memiliki pertanyaan atau hanya
-                ingin menyapa, saya akan berusaha membalas secepatnya!</p>
-            <a href="mailto:{{ site.data.profile.email }}" class="btn btn-primary contact-btn">Kirim Pesan</a>
+            <div class="section-tag">Terhubung</div>
+            <h2 class="section-title">📫 Temukan Saya &bull; Mari Berkolaborasi</h2>
+            <p class="contact-quote"><em>"Designing interfaces, connecting ideas, and building things that work."</em></p>
+            <p class="contact-desc">Saat ini saya terbuka untuk eksplorasi ide baru, perancangan interface UI/UX, dan pengembangan produk digital. Silakan hubungi melalui saluran di bawah ini.</p>
+            
+            <div class="contact-channels">
+                <a href="mailto:{{ site.data.profile.email }}" class="contact-channel-card">
+                    <div class="cc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="cc-info">
+                        <span class="cc-title">Email Langsung</span>
+                        <span class="cc-sub">{{ site.data.profile.email }}</span>
+                    </div>
+                </a>
+
+                <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+                    <div class="cc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    </div>
+                    <div class="cc-info">
+                        <span class="cc-title">GitHub Profile</span>
+                        <span class="cc-sub">github.com/KaajiItsMe</span>
+                    </div>
+                </a>
+
+                <a href="{{ site.data.profile.website }}" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+                    <div class="cc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <div class="cc-info">
+                        <span class="cc-title">Website Utama</span>
+                        <span class="cc-sub">kaami.my.id</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
