@@ -3,7 +3,7 @@ prioritas: 5
 judul: "LokaLens AI - Local Discovery Platform"
 jenis: "AI-Powered Discovery Concept"
 kategori_proyek: "case_study"
-thumbnail: "/assets/images/lokalens.svg"
+thumbnail: "/assets/images/zonagratis.png"
 tech_stack: ["AI/LLM", "Recommendation Engine", "Community Review", "UI/UX Design"]
 live_url: ""
 repo_url: ""

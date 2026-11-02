@@ -3,7 +3,7 @@ prioritas: 1
 judul: "ToDo - Task & Reminder Desktop App"
 jenis: "Open Source Desktop App"
 kategori_proyek: "open_source"
-thumbnail: "/assets/images/todo.svg"
+thumbnail: "/assets/images/proyek-1.png"
 tech_stack: ["Java Swing", "Firebase Firestore", "GSON", "System Tray", "Launch4j"]
 live_url: ""
 repo_url: "https://github.com/KaajiItsMe/ToDo"

@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu when a link is clicked
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
 
-    // Check for saved theme preference or system preference (defaults to dark for Tokyo Night vibe)
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -91,28 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Scroll Reveal Animation (Intersection Observer)
-    const fadeElements = document.querySelectorAll('.fade-up');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                obs.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(element => {
-        observer.observe(element);
-    });
-
-    // 6. Active Nav Link on Scroll
+    // 5. Active Nav Link on Scroll
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
         let current = '';
@@ -135,9 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 7. Projects Filtering
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    // 6. Projects Filtering
+    const filterButtons = document.querySelectorAll('.filter-switch');
+    const projectCards = document.querySelectorAll('.project-entry');
 
     if (filterButtons.length > 0 && projectCards.length > 0) {
         filterButtons.forEach(btn => {
@@ -158,4 +135,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 7. Motion Entrance on Scroll
+    const revealTargets = document.querySelectorAll('.project-entry, .ledger-row, .capability-block, .stat-cell');
+    revealTargets.forEach(el => el.classList.add('reveal-item'));
+
+    const motionObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealTargets.forEach(el => motionObserver.observe(el));
 });
